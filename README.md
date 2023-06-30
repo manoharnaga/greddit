@@ -8,3 +8,22 @@
 - MERN Stack
 - Firebase
 - Docker
+
+
+</br>
+
+## To Run Code: 
+ Run the Backend first
+
+### Backend:
+```
+- npm i
+- npm start
+```
+
+### Frontend:
+```
+- npm i
+- npm start
+```
+</br>
