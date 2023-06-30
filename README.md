@@ -13,8 +13,29 @@
 </br>
 
 ## To Run Code: 
- Run the Backend first
 
+### With Docker:
+1. Download Frontend and Backend and docker-compose.yml(file-from current repo) Folders.
+2. Rename and Arrange them as:
+.                        </br>
+.                        </br>
+├── backend              </br>
+│   ├── Dockerfile       </br>
+│   ....                 </br>
+├── docker-compose.yml   </br>
+├── frontend             </br>
+│   ├── Dockerfile       </br>
+│   ....                 </br>
+
+4. Then **cd** to root(.) and run as follows:
+```
+- sudo docker-compose build
+- sudo docker-compose up
+```
+4. For container conflicts use - **sudo docker rm CONTAINER-NAME**
+
+### Without Docker:
+Run the backend code first
 ### Backend:
 ```
 - npm i
