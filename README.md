@@ -31,8 +31,9 @@
 ```
 - sudo docker-compose build
 - sudo docker-compose up
+- sudo docker-compose down
+
 ```
-4. For container conflicts use - **sudo docker rm CONTAINER-NAME**
 
 ### Without Docker:
 Run the backend code first
