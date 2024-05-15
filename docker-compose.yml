@@ -1,34 +1,22 @@
-version: '3.1'
-
+version: '3'
 services:
-    backend:
-      build: ./backend
-      environment:
-        - PORT=7000
-      restart: unless-stopped
-      networks:
-        - web-network
+  frontend:
+    build:
+      context: ./gredditfrontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
 
-    frontend:
-      build: ./frontend
-      environment:
-        - PORT=3000
-      networks:
-        - web-network
-    nginx:
-      image: nginx
-      container_name: webserver
-      restart: unless-stopped
-      depends_on:
-        - backend
-        - frontend
-      ports:
-        - 8080:8080
-      volumes:
-        - ./nginx/local.conf:/etc/nginx/nginx.conf
-      networks:
-        - web-network
+  backend:
+    build:
+      context: ./gredditbackend
+      dockerfile: Dockerfile
+    ports:
+      - "7000:7000"
+    depends_on:
+      - mongodb
 
-networks:
-  web-network:
-    driver: bridge
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
