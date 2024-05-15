@@ -15,24 +15,29 @@
 ## To Run Code: 
 
 ### With Docker:
-1. Download Frontend and Backend and docker-compose.yml(file-from current repo) Folders.
+1. Download Frontend and Backend repos and docker-compose.yaml, file from this repo.
 2. Rename and Arrange them as:
-.                        </br>
-.                        </br>
-├── backend              </br>
-│   ├── Dockerfile       </br>
-│   ....                 </br>
-├── docker-compose.yml   </br>
-├── frontend             </br>
-│   ├── Dockerfile       </br>
-│   ....                 </br>
+```
+gredditfrontend/
+│   Dockerfile
+│   package.json
+│   ...
+└───src/
+    │   index.js
+    │   ...
+gredditbackend/
+│   Dockerfile
+│   package.json
+│   ...
+└───index.js
+docker-compose.yaml
+```
 
 4. Then **cd** to root(.) and run as follows:
 ```
-- sudo docker-compose build
-- sudo docker-compose up
-- sudo docker-compose down
-
+- sudo docker compose up --build    # To start create the docker-network with containers
+- sudo docker compose down          # To stop and remove all the containers
+- it's NOT docker-compose as it's V2
 ```
 
 ### Without Docker:
